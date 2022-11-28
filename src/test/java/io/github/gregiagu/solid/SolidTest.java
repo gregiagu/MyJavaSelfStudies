@@ -16,6 +16,6 @@ public class SolidTest {
     @Test
     public void singletonTimestampShouldBeEquals() {
         Singleton firstInstance = Singleton.getInstance();
-        assertEquals(firstInstance.getTimestamp(), Singleton.getTimestamp());
+        assertEquals(Singleton.getTimestamp(), Singleton.getTimestamp());
     }
 }
