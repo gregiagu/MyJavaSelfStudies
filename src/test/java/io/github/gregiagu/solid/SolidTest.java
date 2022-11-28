@@ -12,4 +12,10 @@ public class SolidTest {
         Singleton secondInstance = Singleton.getInstance();
         assertEquals(firstInstance.hashCode(), secondInstance.hashCode());
     }
+
+    @Test
+    public void singletonTimestampShouldBeEquals() {
+        Singleton firstInstance = Singleton.getInstance();
+        assertEquals(firstInstance.getTimestamp(), Singleton.getTimestamp());
+    }
 }
