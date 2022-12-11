@@ -3,6 +3,7 @@ package io.github.gregiagu.solid;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class SolidTest {
 
@@ -17,5 +18,13 @@ public class SolidTest {
     public void singletonTimestampShouldBeEquals() {
         Singleton firstInstance = Singleton.getInstance();
         assertEquals(Singleton.getTimestamp(), Singleton.getTimestamp());
+    }
+
+    @Test
+    public void verifyLiskovSubstitution() {
+        ConcreteClass cc = new ConcreteClass("Message in blood");
+        HeritageClass hc = cc;
+        assertEquals(cc.hashCode(), hc.hashCode());
+        assertTrue(hc instanceof ConcreteClass);
     }
 }
